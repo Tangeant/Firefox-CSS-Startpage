@@ -1,51 +1,76 @@
- @-moz-document url("about:home"),url(about:preferences),url("about:blank"),url("about:newtab"),url("about:privatebrowsing"){
-  body{background-color:#292D31!important;--newtab-search-icon: transparent !important;}
-  a,a:visited,a:hover{color:#292D31!important}
-	#newtab-search-text {
-	background-color: #292D31 !important;
-	font-size: 18px !important;
-	color: #9BA8BB !important;
-	box-shadow: none !important;
-	text-align: center !important;
-	border:none !important;
-	font-weight: bold !important;
-		}
+/*================ IMPORT USERCHROME.CSS ================*/
+@import "userChrome.css";
 
-.search-wrapper input {
-    --newtab-textbox-focus-boxshadow: none !important;
-    padding-left: 20px !important;
-   	padding-inline-end: 13px !important;
-  }
-  
-
-.search-wrapper .logo-and-wordmark .wordmark {
-  display: none!important;
-}
-
-.search-wrapper .logo-and-wordmark {
-  margin-bottom: 40px!important;
-  padding-top: 60px!important;
-  filter: saturate(30%) opacity(50%)!important;
-}
-
-
-
-.search-button{background:none !important;}
-
-.prefs-button button {fill: #9BA8BB !important;}
-  
-.prefs-button button:hover, .prefs-button button:focus {
-    background-color:  transparent !important; }	
- 
- .contentSearchSuggestionTable {display: none !important;}
- 
-
-}
+@media (prefers-color-scheme: dark) {
 :root {
-	
-    --in-content-border-active: #9BA8BB !important;
-    --in-content-border-active-shadow: none !important;
-    --in-content-page-background: #292D31 !important;
-    scrollbar-color: #677379 #263238 !important;
-    scrollbar-width: thin;
+	--page_bg_color: var(--night_color1);
+	--search_bg_color: var(--night_color2);
+	--search_border_color: var(--night_color3);
+	--search_border_active_color: var(--night_color4);
+	--search_txt_color: var(--frost_color3);
+}
+}
+
+@media (prefers-color-scheme: light) {
+:root {
+	--page_bg_color: var(--snow_color1);
+	--search_bg_color: var(--snow_color2);
+	--search_border_color: var(--snow_color3);
+	--search_border_active_color: var(--snow_color3);
+	--search_txt_color: var(--night_color4);
+}
+}
+
+/*================== NEW TAB BG COLOR ==================*/
+@-moz-document url("about:newtab"), url("about:home"), url("about:blank") {
+ body { background-color: var(--page_bg_color) !important;}
+}
+
+/*================== SEARCH BAR ==================*/
+.search-wrapper input {
+	transition: all 0.3s ease !important;
+    background: var(--search_bg_color) var(--newtab-search-icon) 12px center no-repeat !important;
+	background-size: 20px !important;
+	border: 1px solid !important;
+	border-color: var(--search_border_color) !important;
+	box-shadow: none !important;
+	color: var(--search_txt_color) !important;
+}
+.search-wrapper .search-inner-wrapper:hover input,
+.search-wrapper .search-inner-wrapper:active input,
+.search-wrapper input:focus {
+	border-color: var(--search_border_active_color) !important;
+}
+
+.search-wrapper .search-button,
+.search-wrapper .search-button {
+	transition: all 0.3s ease !important;
+	fill: var(--search_txt_color) !important;
+}
+.search-wrapper .search-button:focus,
+.search-wrapper .search-button:hover {
+    background-color: var(--search_border_active_color) !important;
+}
+
+/*================== SEARCH BAR RESULTS ==================*/
+.contentSearchSuggestionTable .contentSearchSuggestionsContainer,
+.contentSearchSuggestionTable .contentSearchHeader {
+    background-color: var(--search_bg_color) !important;
+	color: var(--search_txt_color) !important;
+}
+.contentSearchSuggestionTable .contentSearchSuggestionRow.selected,
+.contentSearchSuggestionTable .contentSearchOneOffItem.selected {
+	background-color: var(--search_border_color) !important;
+}
+
+.contentSearchSuggestionTable .contentSearchHeader,
+.contentSearchSuggestionTable .contentSearchSettingsButton,
+.contentSearchSuggestionTable .contentSearchOneOffsTable {
+	border-color: var(--search_border_color) !important;
+}
+
+.contentSearchSuggestionTable {
+	box-shadow: none !important;
+	border: 1px solid var(--search_border_color) !important;
+	border-radius: 3px !important;
 }
