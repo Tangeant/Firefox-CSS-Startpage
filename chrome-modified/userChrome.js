@@ -1,11 +1,11 @@
 
 (function() {
   // IMPORTANT: when there's no filename, be sure to include a trailing slash at the end.
-  const mypage = "file://C:\\Users\\Chris\\AppData\\Roaming\\Waterfox\\Profiles\\5393hxli.68-edition-default\\startpage\\index.html";
+  const mypage = "file:E:\\My%20Documents\\GitHub\\Firefox-CSS-Startpage\\startpage\\index.html";
   // Don't place the caret in the location bar. Useful if you want a page's search box to have focus instead.
   var removefocus = "yes";
   // Clear the page's URL from the location bar. Normally not needed, as this should already be the default behavior.
-  var clearlocationbar = "no";
+  var clearlocationbar = "yes";
 
   aboutNewTabService.newTabURL = mypage;
   function customNewTab () {
