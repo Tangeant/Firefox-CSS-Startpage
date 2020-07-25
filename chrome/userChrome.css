@@ -1,7 +1,7 @@
 /*css part of the prismatic night theme. visit https://github.com/dbuxy218/Prismatic-Night*/
 /* COLOUR THEMES */
 /*@import url("patches/prismatic-colours.css");*/
-@import url("patches/nord.css");
+@import url("patches/walcolours.css");
 
 /*MANDATORY*/
 @import url("patches/tabs-custom.css");
