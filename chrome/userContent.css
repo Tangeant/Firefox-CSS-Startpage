@@ -1,10 +1,12 @@
+@import url("patches/walcolours.css");
+
  @-moz-document url("about:home"),url(about:preferences),url("about:blank"),url("about:newtab"),url("about:privatebrowsing"){
-  body{background-color:#4C566A!important;--newtab-search-icon: transparent !important;}
-  a,a:visited,a:hover{color:#88C0D0!important}
+  body{background-color:var(--background) !important;--newtab-search-icon: transparent !important;}
+  a,a:visited,a:hover{color:var(--color3)!important}
 	#newtab-search-text {
-	background-color: #4C566A !important;
+	background-color: var(--background) !important;
 	font-size: 18px !important;
-	color: #D8DEE9 !important;
+	color: var(--color8) !important;
 	box-shadow: none !important;
 	text-align: center !important;
 	border:none !important;
@@ -32,7 +34,7 @@
 
 .search-button{background:none !important;}
 
-.prefs-button button {fill: #4C566A !important;}
+.prefs-button button {fill: var(--color3) !important;}
 
 .prefs-button button:hover, .prefs-button button:focus {
     background-color:  transparent !important; }
@@ -43,9 +45,9 @@
 }
 :root {
 
-    --in-content-border-active: #4C566A !important;
+    --in-content-border-active: var(--color8) !important;
     --in-content-border-active-shadow: none !important;
-    --in-content-page-background: #88C0D0 !important;
-    scrollbar-color: #4C566A #88C0D0 !important;
+    --in-content-page-background: var(--color3) !important;
+    scrollbar-color: var(--background) var(--color3) !important;
     scrollbar-width: thin;
 }
